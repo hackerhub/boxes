@@ -1,1 +1,1 @@
-## Put your iso this directory
+## Put your iso in this directory
