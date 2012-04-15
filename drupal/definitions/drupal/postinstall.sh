@@ -27,7 +27,22 @@ apt-get -y install percona-server-server-5.5
 
 apt-get -y install nginx
 apt-get -y install imagemagick php5-fpm php5-mysql php5-common php5 php5-dev php-pear php5-curl php5-gd php5-imagick php5-mcrypt php5-suhosin
+apt-get -y install drush
 
+# Drupal config on nginx
+cd /etc/nginx/conf.d/
+wget -c https://raw.github.com/gist/2388530/744b58d090c856e40ca931c00737ac40f5bffca5/php.conf
+wget -c https://raw.github.com/gist/2388123/53a866c16388ba8589f51d462884743f0e2f4574/drupal.conf
+
+# Vhost training.dev
+cd /etc/nginx/sites-availables/
+wget -c https://raw.github.com/gist/2388457/a27ad8fbe1eb8e8c52082394a31dd03093b596e5/training.dev
+ln -s /etc/nginx/sites-available/training.dev /etc/nginx/sites-enabled/training.dev
+echo "127.0.0.1     training.dev" >> /etc/hosts
+
+# Reload services
+/etc/init.d/nginx reload
+/etc/init.d/php5-fpm force-reload
 
 # If you want to compile and install nginx from source, issue the following
 # commands to install the prerequisites:

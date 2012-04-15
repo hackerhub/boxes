@@ -1,5 +1,11 @@
 # Vagrant boxes
 
+![Vagrant logo](http://vagrantup.com/static/images/hippie.png)
+
+### Requirements
+
+* [Vagrant](http://vagrantup.com/docs/getting-started/index.html)
+* [Veewee](https://github.com/jedi4ever/veewee)
 
 ### Available Boxes
 
