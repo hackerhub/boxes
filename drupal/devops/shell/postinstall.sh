@@ -9,9 +9,15 @@ sudo wget -c https://raw.github.com/gist/2388123/53a866c16388ba8589f51d462884743
 
 # Vhost training.dev
 cd /etc/nginx/sites-available/
-sudo wget -c https://raw.github.com/gist/2388457/a27ad8fbe1eb8e8c52082394a31dd03093b596e5/training.dev
+sudo wget -c https://raw.github.com/gist/2388457/a92f7a61192990c0fee30a15a0d13954d3644ebf/training.dev
 sudo ln -s /etc/nginx/sites-available/training.dev /etc/nginx/sites-enabled/training.dev
 echo "127.0.0.1     training.dev" >> /etc/hosts
+
+# Vhost phpmyadmin.dev
+cd /etc/nginx/sites-available/
+sudo wget -c https://raw.github.com/gist/2415625/7d7a4faed70f9482162f0407f3fc515f9a23f9d4/phpmyadmin.dev
+sudo ln -s /etc/nginx/sites-available/phpmyadmin.dev /etc/nginx/sites-enabled/phpmyadmin.dev
+echo "127.0.0.1     phpmyadmin.dev" >> /etc/hosts
 
 # Reload services
 /etc/init.d/nginx reload

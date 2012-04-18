@@ -1,0 +1,1 @@
+## Put your phpmyadmin code in this directory
